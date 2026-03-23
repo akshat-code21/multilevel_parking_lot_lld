@@ -1,0 +1,29 @@
+package org.example.model;
+
+import org.example.enums.VehicleType;
+
+public class Vehicle {
+    private String vehicleId;
+    private VehicleType vehicleType;
+
+    public Vehicle(String vehicleId, VehicleType vehicleType) {
+        this.vehicleId = vehicleId;
+        this.vehicleType = vehicleType;
+    }
+
+    public String getVehicleId() {
+        return vehicleId;
+    }
+
+    public VehicleType getVehicleType() {
+        return vehicleType;
+    }
+
+    @Override
+    public String toString() {
+        return "Vehicle{" +
+                "vehicleId='" + vehicleId + '\'' +
+                ", vehicleType=" + vehicleType +
+                '}';
+    }
+}
