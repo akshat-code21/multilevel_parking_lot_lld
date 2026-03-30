@@ -10,7 +10,7 @@ import java.util.*;
 
 public class ParkingLot {
 
-    private static ParkingLot instance;
+    private static volatile ParkingLot instance;
 
     private final List<ParkingLevel> levels;
     private final List<Gate> gates;
