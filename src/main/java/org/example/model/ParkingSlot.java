@@ -5,9 +5,9 @@ import org.example.enums.SlotType;
 import java.util.Map;
 
 public class ParkingSlot {
-    private String slotId;
-    private SlotType slotType;
-    private Map<Gate, Double> distanceToGate;
+    private final String slotId;
+    private final SlotType slotType;
+    private final Map<Gate, Double> distanceToGate;
     private boolean isOccupied;
 
     public ParkingSlot(String slotId, SlotType slotType, Map<Gate, Double> distanceToGate) {

@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 import java.util.Map;
 
 public class FareCalculator {
-    private Map<SlotType, Double> priceMap;
+    private final Map<SlotType, Double> priceMap;
 
     public FareCalculator(Map<SlotType, Double> priceMap) {
         this.priceMap = priceMap;

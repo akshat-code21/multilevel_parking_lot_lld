@@ -12,10 +12,10 @@ public class ParkingLot {
 
     private static ParkingLot instance;
 
-    private List<ParkingLevel> levels;
-    private List<Gate> gates;
-    private FareCalculator calculator;
-    private SlotStrategy slotStrategy;
+    private final List<ParkingLevel> levels;
+    private final List<Gate> gates;
+    private final FareCalculator calculator;
+    private final SlotStrategy slotStrategy;
 
     private ParkingLot(List<ParkingLevel> levels, List<Gate> gates,
                        FareCalculator calculator, SlotStrategy slotStrategy) {

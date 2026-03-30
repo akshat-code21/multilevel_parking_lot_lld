@@ -5,11 +5,11 @@ import org.example.enums.VehicleType;
 import java.time.LocalDateTime;
 
 public class Ticket {
-    private String ticketId;
-    private VehicleType vehicleType;
-    private ParkingSlot assignedSlot;
-    private Gate entryGate;
-    private LocalDateTime entryTime;
+    private final String ticketId;
+    private final VehicleType vehicleType;
+    private final ParkingSlot assignedSlot;
+    private final Gate entryGate;
+    private final LocalDateTime entryTime;
 
     public Ticket(String ticketId, VehicleType vehicleType, ParkingSlot assignedSlot,
                   Gate entryGate, LocalDateTime entryTime) {

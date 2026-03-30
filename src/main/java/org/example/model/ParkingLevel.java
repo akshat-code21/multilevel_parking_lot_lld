@@ -6,8 +6,8 @@ import java.util.List;
 import java.util.Map;
 
 public class ParkingLevel {
-    private String levelId;
-    private Map<SlotType, List<ParkingSlot>> slotMapping;
+    private final String levelId;
+    private final Map<SlotType, List<ParkingSlot>> slotMapping;
 
     public ParkingLevel(String levelId, Map<SlotType, List<ParkingSlot>> slotMapping) {
         this.levelId = levelId;

@@ -3,8 +3,8 @@ package org.example.model;
 import org.example.enums.VehicleType;
 
 public class Vehicle {
-    private String vehicleId;
-    private VehicleType vehicleType;
+    private final String vehicleId;
+    private final VehicleType vehicleType;
 
     public Vehicle(String vehicleId, VehicleType vehicleType) {
         this.vehicleId = vehicleId;

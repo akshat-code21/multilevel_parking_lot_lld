@@ -1,7 +1,7 @@
 package org.example.model;
 
 public class Gate {
-    private String gateId;
+    private final String gateId;
 
     public Gate(String gateId) {
         this.gateId = gateId;
