@@ -27,8 +27,12 @@ public class ParkingLot {
 
     public static ParkingLot create(List<ParkingLevel> levels, List<Gate> gates,
                                     FareCalculator calculator, SlotStrategy slotStrategy) {
-        if (instance == null) {
-            instance = new ParkingLot(levels, gates, calculator, slotStrategy);
+        if(instance == null){
+            synchronized (ParkingLot.class){
+                if(instance == null){
+                    instance = new ParkingLot(levels, gates, calculator, slotStrategy);
+                }
+            }
         }
         return instance;
     }
