@@ -47,21 +47,24 @@ public class ParkingLot {
         }
 
         Gate gate = gates.get(entryGate);
-        ParkingSlot slot = slotStrategy.findSlot(levels, slotType, gate);
 
-        if (slot == null) {
-            System.out.println("No available slot of type " + slotType + " found.");
-            return null;
+        synchronized (this){
+            ParkingSlot slot = slotStrategy.findSlot(levels, slotType, gate);
+
+            if (slot == null) {
+                System.out.println("No available slot of type " + slotType + " found.");
+                return null;
+            }
+
+            slot.occupy();
+
+            String ticketId = UUID.randomUUID().toString().substring(0, 8).toUpperCase();
+
+            Ticket ticket = new Ticket(ticketId, vehicle.getVehicleType(), slot, gate, entryTime);
+            System.out.println("Ticket issued: " + ticket);
+
+            return ticket;
         }
-
-        slot.occupy();
-
-        String ticketId = UUID.randomUUID().toString().substring(0, 8).toUpperCase();
-
-        Ticket ticket = new Ticket(ticketId, vehicle.getVehicleType(), slot, gate, entryTime);
-        System.out.println("Ticket issued: " + ticket);
-
-        return ticket;
     }
 
     public double exit(Ticket ticket, LocalDateTime exitTime) {
